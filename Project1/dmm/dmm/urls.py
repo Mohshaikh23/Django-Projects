@@ -19,6 +19,7 @@ from django.urls import path
 from dmm import views
 
 urlpatterns = [
+    path('', views.homepage),
     path('admin/', admin.site.urls),
     path('about-us/', views.about_us),
     path('courses/', views.course),
