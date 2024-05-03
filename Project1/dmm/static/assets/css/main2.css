@@ -1,0 +1,112 @@
+/* Resetting default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the header */
+header {
+    background-color: #333; /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust the height of the logo as needed */
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust the spacing between menu items as needed */
+}
+
+nav ul li a {
+    color: #fff; /* Change the link color as needed */
+    text-decoration: none;
+    font-size: 16px; /* Adjust the font size as needed */
+}
+
+nav ul li a:hover {
+    color: #ff6600; /* Change the hover color as needed */
+}
+
+
+/* Resetting default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the footer */
+footer {
+    background-color:#3a3a3a; /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.contact span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.socials a {
+    color: #fff; /* Change the social icon color as needed */
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    background-color: #222; /* Change the background color of the footer bottom as needed */
+}
+.footer-section.links {
+    padding: 0 20px;
+}
+
+.footer-section.links h2 {
+    margin-bottom: 10px;
+    color: #fff; /* Change the color as needed */
+}
+
+.footer-section.links ul {
+    list-style: none;
+}
+
+.footer-section.links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section.links ul li a {
+    color: #fff; /* Change the link color as needed */
+    text-decoration: none;
+    font-size: 16px; /* Adjust the font size as needed */
+}
+
+.footer-section.links ul li a:hover {
+    color: #ff6600; /* Change the hover color as needed */
+}

@@ -20,6 +20,8 @@ from dmm import views
 
 urlpatterns = [
     path('', views.homepage),
+    path('generic/', views.generic),
+    path('elements/', views.elements),
     path('admin/', admin.site.urls),
     path('about-us/', views.about_us),
     path('courses/', views.course),
