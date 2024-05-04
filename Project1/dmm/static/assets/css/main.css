@@ -1,6 +1,6 @@
 /* Resetting default margin and padding */
 body, h1, h2, h3, p, ul, li {
-    margin: 0;
+    margin: 10px;
     padding: 0;
 }
 
@@ -76,7 +76,7 @@ footer {
 }
 .about {
     background-color:#3a3a3a ;
-    margin-top: auto;
+    margin-top: 10px;
 }
 .about-text {
     margin-top: 10px;
@@ -130,7 +130,7 @@ footer {
 
 /* AI Development Section */
 .ai-development {
-    padding: 50px 0;
+    padding: 20px 0;
     background-color: #f9f9f9; /* Change background color as needed */
 }
 
@@ -171,7 +171,7 @@ footer {
 
 /* About Section */
 .about {
-    padding: 50px 0;
+    padding: 20px 0;
     background-color: #f9f9f9; /* Change background color as needed */
 }
 
@@ -230,7 +230,7 @@ nav ul li {
 }
 
 main {
-    padding: 20px;
+    padding: 20px 0;
 }
 
 footer {
@@ -265,14 +265,28 @@ button {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    margin-bottom: 20px;
+    margin-bottom: auto;
     background-color: #333;
     color: #fff;
-    /* padding: 10px 20px; */
+    padding: 10px 10px;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
     color: #ff9e65;
+}
+.services {
+    
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.services h2 {
+    padding: 10px;
+}
+.services p {
+    padding: 10px;
+}
+.services li {
+    padding: 5px;
 }
