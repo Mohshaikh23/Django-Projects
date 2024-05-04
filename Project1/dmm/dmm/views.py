@@ -15,15 +15,18 @@ def homepage(request):
     return render(request, "index2.html")
 
 
-def generic(request):
-    return render(request, "generic.html")
-
-def elements(request):
-    return render(request, "elements.html")
+def about(request):
+    return render(request, "about.html")
 
 
-def about_us(request):
-    return HttpResponse("Welcome to About Us Page")
+def services(request):
+    return render(request, "services.html")
+
+def blogs(request):
+    return render(request, "blogs.html")
+
+def contact(request):
+    return render(request, "contact.html")
 
 def course(request):
     return HttpResponse("Welcome to Course Page")
