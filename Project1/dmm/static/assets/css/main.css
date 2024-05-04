@@ -276,8 +276,9 @@ button {
 button:hover {
     color: #ff9e65;
 }
+
+/* Services CSS */
 .services {
-    
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -289,4 +290,12 @@ button:hover {
 }
 .services li {
     padding: 5px;
+}
+
+/* Blogs CSS */
+.blog {
+    padding: 10px;
+}
+.blog h2 {
+    padding: 10px;
 }
