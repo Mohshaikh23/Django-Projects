@@ -25,7 +25,9 @@ urlpatterns = [
     path('services/', views.services, name="services"),
     path('blogs/', views.blogs, name="blogs"),
     path('contact/', views.contact, name="contact"),
-    
+    path('userform/', views.userform, name="userform"),
+    path('thankyou/', views.thankyou, name ="thankyou"),
+
     path('courses/', views.course),
     path('courses/<courseid>', views.coursedetails),
 ]
