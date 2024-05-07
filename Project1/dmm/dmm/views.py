@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from .forms import Userforms
 
 def homepage(request):
     # data={
@@ -28,15 +29,13 @@ def blogs(request):
 def contact(request):
     return render(request, "contact.html")
 
-def thankyou(request):
-    if request.method=="GET":
-        output=request.GET.get('output')
-    return render(request, "thankyou.html",{'output':output})
-
 
 def userform(request):
     finals = 0
-    data = {}
+
+    fn = Userforms()
+    
+    data = {'form':fn}
     try:
         if request.method == "POST":
             print("Request method:", request.method)  # Debugging
@@ -46,24 +45,27 @@ def userform(request):
             n2 = int(request.POST.get('num2'))
             finals = n1 + n2
             data = {
-                'n1':n1,
-                'n2':n2,
+                'form':fn,
                 'output':finals,
             }
 
             url= "/thankyou/?output={}".format(finals)
 
-            return redirect(url) 
+            return HttpResponseRedirect(url) 
         
     except Exception as e:
         print("Error:", e)  # Debugging
 
     return render(request, "userform.html", {'output': finals})
 
-
+def thankyou(request):
+    if request.method == "GET":
+        output = request.GET.get('output')
+    return render(request, "thankyou.html", {'output': output})
 
 def course(request):
     return HttpResponse("Welcome to Course Page")
 
 def coursedetails(request, courseid):
     return HttpResponse(courseid)
+
