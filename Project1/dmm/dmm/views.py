@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .forms import Userforms
+from .forms import userForm
 
 def homepage(request):
     # data={
@@ -33,7 +33,7 @@ def contact(request):
 def userform(request):
     finals = 0
 
-    fn = Userforms()
+    fn = userForm()
     
     data = {'form':fn}
     try:
@@ -56,7 +56,7 @@ def userform(request):
     except Exception as e:
         print("Error:", e)  # Debugging
 
-    return render(request, "userform.html", {'output': finals})
+    return render(request, "userform.html", data)
 
 def thankyou(request):
     if request.method == "GET":
@@ -69,3 +69,25 @@ def course(request):
 def coursedetails(request, courseid):
     return HttpResponse(courseid)
 
+def calculator(request):
+    c = ""
+    try:
+        if request.method=="POST":
+            num1 = eval(request.POST.get("num1"))
+            num2 = eval(request.POST.get("num2"))
+            opr = request.POST.get("OPR")
+
+            if opr == "+":
+                c = num1 + num2
+            elif opr == "-":
+                c = num1 - num2
+            elif opr == "/":
+                c = num1 / num2
+            elif opr == "*":
+                c = num1 * num2
+
+    except Exception as e:
+        print(e)
+    
+    print(c)
+    return render(request, "calculator.html", {"c":c})

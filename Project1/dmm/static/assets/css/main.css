@@ -299,3 +299,14 @@ button:hover {
 .blog h2 {
     padding: 10px;
 }
+
+.calc {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc h2 {
+    text-align: center;
+}

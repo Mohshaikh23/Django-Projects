@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <section class="calc">
+        <h2>Calculator</h2>
+
+        <div class = "frm">
+            <form method = 'post'>
+                {% csrf_token %}
+                <label >Value 1</label> 
+                <input type="text" name="num1" class='form-control'>
+                <select name="OPR">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                    <option value="*">*</option>
+                </select>
+                <label>Value 2</label>
+                <input type="text" name="num2" class="form-control">
+
+                <button type="submit">Calculate</button>
+
+                <label>Output</label>
+                <input type="text" value="{{c}}" class="form-control">
+            </form>            
+        </div>
+    </section>
+</main>
+{% endblock %}
