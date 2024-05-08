@@ -1,21 +1,14 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<main>
+  <section>
+    <div class="thankpage">
+      <h2>Thankyou</h2>
+    </div>
 
-{% block content %}
-    <main>
-        <section>
-        <div class="thankpage">
-            <h2>Thankyou</h2>
-        </div>
+    <div class="para">
+      <p>Thankyou for your support. You answer is {{output}} {{data}}</p>
+    </div>
+  </section>
+</main>
 
-        <div class="para">
-            <p>
-                Thankyou for your support. You answer is {{output}}
-
-                {{data}}
-            </p>
-
-        </div>
-        </section>
-    </main>
-
-{% endblock  %}
+{% endblock %}

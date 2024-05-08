@@ -1,14 +1,11 @@
-{% extends "base.html" %} 
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <main>
   <h2>User Form</h2>
   <section class="form">
     <div class="row">
       <div class="col-12">
         <form method="post">
-          {% csrf_token %} 
-          {{form}} 
-          {% comment %}
+          {% csrf_token %} {{form}} {% comment %}
           <div class="form-group">
             <label for="num1">Value 1</label>
             <input
