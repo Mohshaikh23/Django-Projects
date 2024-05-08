@@ -91,3 +91,13 @@ def calculator(request):
     
     print(c)
     return render(request, "calculator.html", {"c":c})
+
+def even_odd(request):
+    c = ""
+    if request.method == "POST":
+        n = eval(request.POST.get("num1"))
+        if n%2==0:
+            c = "Even"
+        else:
+            c = "Odd"
+    return render(request, "evenodd.html", {'c':c})
