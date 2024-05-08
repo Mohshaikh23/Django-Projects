@@ -29,6 +29,7 @@ urlpatterns = [
     path('thankyou/', views.thankyou, name ="thankyou"),
     path('calc/', views.calculator, name = "calc"),
     path('evenodd/', views.even_odd, name="evenodd"),
+    path('marksheet/', views.marksheet, name="marksheet"),
     path('courses/', views.course),
     path('courses/<courseid>', views.coursedetails),
 ]

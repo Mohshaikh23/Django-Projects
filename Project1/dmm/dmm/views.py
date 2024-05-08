@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import userForm
+import math
 
 def homepage(request):
     # data={
@@ -101,3 +102,24 @@ def even_odd(request):
         else:
             c = "Odd"
     return render(request, "evenodd.html", {'c':c})
+
+def marksheet(request):
+    if request.method == "POST":
+        s1 = eval(request.POST.get('subject1'))
+        s2 = eval(request.POST.get('subject2'))
+        s3 = eval(request.POST.get('subject3'))
+        s4 = eval(request.POST.get('subject4'))
+        s5 = eval(request.POST.get('subject5'))
+        t = s1+s2+s3+s4+s5
+        p = t*100/500
+        if p>60:
+            d = "First Division"
+        elif p>=48:
+            d = "Second Division"
+        else:
+            d = "Third Division"
+        data = {'total':t, 
+                'percentage':math.floor(p),
+                'division':d}
+        return render(request, "marksheet.html", data)
+    return render(request, "marksheet.html")
