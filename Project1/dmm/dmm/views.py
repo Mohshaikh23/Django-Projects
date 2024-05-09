@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .forms import userForm
 import math
 from service.models import Service
-
+from news.models import News
 def homepage(request):
     
 
@@ -32,7 +32,11 @@ def services(request):
     return render(request, "services.html", data)
 
 def blogs(request):
-    return render(request, "blogs.html")
+    blogdata = News.objects.all()
+    blog_data = {
+        "BlogsData":blogdata
+    }
+    return render(request, "blogs.html", blog_data)
 
 def contact(request):
     return render(request, "contact.html")
