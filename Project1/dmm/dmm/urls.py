@@ -32,4 +32,5 @@ urlpatterns = [
     path('marksheet/', views.marksheet, name="marksheet"),
     path('courses/', views.course),
     path('courses/<courseid>', views.coursedetails),
+    path('news/', views.Google, name = "Google"),
 ]
