@@ -371,12 +371,12 @@ background-color: #0056b3; /* Button background color on hover */
 }
 
 .blogs {
-    padding: 50px 0;
+    padding: 20px 0;
     background-color: #f9f9f9;
 }
 
 .blog-blocks {
-    display:flexbox;
+    display:inline-block;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -386,7 +386,7 @@ background-color: #0056b3; /* Button background color on hover */
     flex-basis: 30%;
     padding: 20px;
     text-align: center;
-    background-color: #000000;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0 .1);
     margin-bottom: 20px;

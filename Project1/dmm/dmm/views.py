@@ -1,3 +1,4 @@
+import requests
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import userForm
@@ -137,3 +138,26 @@ def marksheet(request):
                 'division':d}
         return render(request, "marksheet.html", data)
     return render(request, "marksheet.html")
+
+
+def Google(request):
+    url = "https://google-api31.p.rapidapi.com/websearch"
+
+    payload = {
+        "text": "Google ",
+        "safesearch": "off",
+        "timelimit": "",
+        "region": "wt-wt",
+        "max_results": 20
+    }
+    headers = {
+        "x-rapidapi-key": "aa47eb9625msh2084a2c9f3c7716p19a4dcjsnac584c6c0af7",
+        "x-rapidapi-host": "google-api31.p.rapidapi.com",
+        "Content-Type": "application/json"
+    }
+
+    response = requests.post(url, json=payload, headers=headers)
+
+    data = response.json()
+
+    return render(request, "news.html", data)
