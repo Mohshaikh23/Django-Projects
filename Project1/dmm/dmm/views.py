@@ -2,8 +2,11 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import userForm
 import math
+from service.models import Service
 
 def homepage(request):
+    
+
     # data={
     #     'title':"Home Page",
     #     'bdata': "Hello Everyone I hope you are good",
@@ -22,7 +25,11 @@ def about(request):
 
 
 def services(request):
-    return render(request, "services.html")
+    servicesData = Service.objects.all().order_by('id')
+    data = {
+        'servicesData':servicesData
+    }
+    return render(request, "services.html", data)
 
 def blogs(request):
     return render(request, "blogs.html")
