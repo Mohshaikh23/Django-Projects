@@ -349,36 +349,40 @@ margin-top: 20px;
 }
 
 .tools-ad a:hover {
-    background-color: #0056b3; /* Button background color on hover */
+    background-color: #0056b3;
 }
 
+/* Define styles for the blogs section */
 .blogs {
-    padding: 20px 0;
-    background-color: #f9f9f9;
+    padding: 20px; /* Add padding around the section */
+  }
+  
+/* Define styles for the container */
+.container {
+max-width: 1200px; /* Set maximum width for the container */
+margin: 0 auto; /* Center the container horizontally */
 }
 
+/* Define styles for the blog blocks */
 .blog-blocks {
-    flex-wrap: wrap;
-    justify-content: space-between;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with minimum item width of 300px */
+gap: 20px; /* Gap between blog blocks */
 }
 
+/* Define styles for each blog block */
 .blog {
-    display: inline-block;
-    width: calc(33.33% - 10px); 
-    flex-basis: 30%;
-    padding: 20px;
-    text-align: center;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0 .1);
-    margin-bottom: 20px;
+background-color: #f0f0f0; /* Background color for blog blocks */
+padding: 20px; /* Add padding inside the blog block */
 }
 
+/* Define styles for blog titles */
 .blog h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+margin-top: 0; /* Remove margin from the top of the title */
 }
 
+/* Define styles for blog descriptions */
 .blog p {
-    font-size: 16px;
+margin-bottom: 0; /* Remove margin from the bottom of the description */
 }
+  
