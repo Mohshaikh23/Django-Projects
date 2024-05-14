@@ -5,9 +5,16 @@
       <h2>Learn</h2>
       <p>Transform your learning using Different Modules</p>
       <br /><br />
-
+  
       <div class="service-blocks">
-        {% for i in servicesData%}
+        {% for i in servicesData %}
+          <div class="service">
+            <img src="{{ i.service_icon }}" class="service-icon" />
+            <h3>{{ i.service_title }}</h3>
+            <p>{{ i.service_des }}</p>
+          </div>
+        {% endfor %}
+        {% for i in servicesData1 %}
           <div class="service">
             <img src="{{ i.service_icon }}" class="service-icon" />
             <h3>{{ i.service_title }}</h3>
@@ -17,6 +24,7 @@
       </div>
     </div>
   </section>
+  
 
   <section class="tools">
     <h2>Tools</h2>
@@ -25,6 +33,7 @@
       <a href="/evenodd">Even Odd</a>
       <a href="/marksheet">marksheet</a>
     </div>
+
   </section>
 </main>
 {% endblock %}

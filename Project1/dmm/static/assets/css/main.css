@@ -277,60 +277,39 @@ button:hover {
     color: #ff9e65;
 }
 
-/* Services CSS */
+/* Define styles for the services section */
 .services {
-    padding: 50px 0;
-    background-color: #f9f9f9;
+    padding: 20px; /* Add padding around the section */
   }
   
+/* Define styles for the container */
 .container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
+    max-width: 1200px; /* Set maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
-.services h2 {
-text-align: center;
-margin-bottom: 30px;
-}
-
+/* Define styles for the service blocks */
 .service-blocks {
-display: flex;
-justify-content: space-between;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+/* Define styles for each service block */
 .service {
-width: calc(33.33% - 10px); 
-flex-basis: 30%;
-padding: 20px;
-text-align: center;
-background-color: #fff;
-border-radius: 8px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); /* Calculate width for each service with some margin */
+    margin-bottom: 20px; /* Add margin between services */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
 }
+  
 
-.service-blocks .service {
-display:flexbox;
-flex-wrap: wrap;
-justify-content: space-between; 
-width: 100%; 
-height: 200px;
-margin-bottom: 10px;
-}
-
-.service h3 {
-font-size: 24px;
-margin-bottom: 10px;
-}
-
-.service p {
-font-size: 16px;
-}
-
+/* Define styles for service icons */
 .service-icon {
-width: 50px; /* Adjust the width as needed */
-height: auto; /* Maintain aspect ratio */
+    width: 100px; /* Set width for service icons */
+    height: 100px; /* Set height for service icons */
+    margin-bottom: 10px; /* Add space below the service icon */
 }
+  
   
 .calc {
     padding: 10px;
@@ -348,26 +327,29 @@ height: auto; /* Maintain aspect ratio */
 }
 
 .tools {
+    margin-top: 10px;
     text-align: center;
   }
-  
+.tools h2 {
+    margin-top: 10px;
+}  
 .tools-ad {
 margin-top: 20px;
 }
 
 .tools-ad a {
-display: inline-block;
-padding: 10px 20px;
-margin: 0 10px;
-background-color: #007bff; /* Button background color */
-color: #fff; /* Button text color */
-text-decoration: none;
-border-radius: 5px; /* Button border radius */
-transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    text-decoration: none;
+    border-radius: 5px; /* Button border radius */
+    transition: background-color 0.3s ease;
 }
 
 .tools-ad a:hover {
-background-color: #0056b3; /* Button background color on hover */
+    background-color: #0056b3; /* Button background color on hover */
 }
 
 .blogs {
@@ -376,12 +358,12 @@ background-color: #0056b3; /* Button background color on hover */
 }
 
 .blog-blocks {
-    display:inline-block;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .blog {
+    display: inline-block;
     width: calc(33.33% - 10px); 
     flex-basis: 30%;
     padding: 20px;
@@ -400,6 +382,3 @@ background-color: #0056b3; /* Button background color on hover */
 .blog p {
     font-size: 16px;
 }
-
-
-
