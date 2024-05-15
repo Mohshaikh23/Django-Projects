@@ -26,11 +26,9 @@ def about(request):
 
 
 def services(request):
-    servicesData = Service.objects.all().order_by('id')[0:3]
-    servicesData1 = Service.objects.all().order_by('id')[3:6]
+    servicesData = Service.objects.all().order_by('id')
     data = {
-        'servicesData':servicesData,
-        'servicesData1':servicesData1
+        'servicesData':servicesData
     }
     return render(request, "services.html", data)
 

@@ -2,26 +2,35 @@
 <main>
   <section class="services">
     <div class="container">
+      <div class="column">
       <h2>Learn</h2>
       <p>Transform your learning using Different Modules</p>
       <br /><br />
-  
-      <div class="service-blocks">
+    </div>
+    <div class="column">
+      <div class = "searchbar">
+        <form>
+          <input type="text" name="service" value="" />
+          <input type="submit" value="Search">
+        </form>
+      </div>
+    </div>
+    <div class="service-blocks">
+      <div class="row">
         {% for i in servicesData %}
-          <div class="service">
-            <img src="{{ i.service_icon }}" class="service-icon" />
-            <h3>{{ i.service_title }}</h3>
-            <p>{{ i.service_des }}</p>
+          <div class="col-md-4">
+            <div class="service">
+              <img src="{{ i.service_icon }}" class="service-icon" />
+              <h3>{{ i.service_title }}</h3>
+              <p>{{ i.service_des }}</p>
+            </div>
           </div>
-        {% endfor %}
-        {% for i in servicesData1 %}
-          <div class="service">
-            <img src="{{ i.service_icon }}" class="service-icon" />
-            <h3>{{ i.service_title }}</h3>
-            <p>{{ i.service_des }}</p>
-          </div>
+          {% if forloop.counter|divisibleby:3 and not forloop.last %}
+            </div><div class="row">
+          {% endif %}
         {% endfor %}
       </div>
+    </div>
     </div>
   </section>
   

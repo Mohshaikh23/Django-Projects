@@ -284,33 +284,46 @@ button:hover {
   
 /* Define styles for the container */
 .container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
     max-width: 1200px; /* Set maximum width for the container */
     margin: 0 auto; /* Center the container horizontally */
 }
-
-/* Define styles for the service blocks */
+.column {
+    display: flex; /* Display columns as inline-block elements */
+    width: 30%; /* Set width for each column */
+    vertical-align: top; /* Align columns to the top */
+    margin-right: 20px; /* Add margin between columns */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+.searchbar {
+    margin-left: auto;
+}
+.searchbar form {
+    display: flex; /* Use flexbox layout */
+}
 .service-blocks {
-    display: inline-flex;
+    display:inline-flexbox;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-/* Define styles for each service block */
 .service {
-    width: calc(33.33% - 20px); /* Calculate width for each service with some margin */
-    margin-bottom: 20px; /* Add margin between services */
-    box-sizing: border-box; /* Include padding and border in the width calculation */
+    text-align: center; /* Center align content */
+    margin-bottom: 20px; /* Adjust bottom margin as needed */
+    padding: 20px; /* Add padding to create space within the block */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
 }
-  
-
-/* Define styles for service icons */
 .service-icon {
     width: 100px; /* Set width for service icons */
-    height: 100px; /* Set height for service icons */
+    height: auto; /* Set height for service icons */
     margin-bottom: 10px; /* Add space below the service icon */
 }
-  
-  
+
+
+ /* Calculator */
 .calc {
     padding: 10px;
     display: flex;
@@ -385,4 +398,4 @@ margin-top: 0; /* Remove margin from the top of the title */
 .blog p {
 margin-bottom: 0; /* Remove margin from the bottom of the description */
 }
-  
+
