@@ -5,9 +5,10 @@ from .forms import userForm
 import math
 from service.models import Service
 from news.models import News
-def homepage(request):
-    
+from django.core.paginator import Paginator
 
+
+def homepage(request):
     # data={
     #     'title':"Home Page",
     #     'bdata': "Hello Everyone I hope you are good",
@@ -27,13 +28,18 @@ def about(request):
 
 def services(request):
     servicesData = Service.objects.all()
+    paginator = Paginator(servicesData, 2)
+    page_num = request.GET.get('page')
+    serviceDatafinal = paginator.get_page(page_num)
+
 
     if request.method == "GET":
         st = request.GET.get('service_name')
         if st!= None:
             servicesData = Service.objects.filter(service_title__icontains=st)
     data = {
-        'servicesData':servicesData
+        'servicesData':servicesData,
+        'serviceDatafinal': serviceDatafinal
     }
     return render(request, "services.html", data)
 
