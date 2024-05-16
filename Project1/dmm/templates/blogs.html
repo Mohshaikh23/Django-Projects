@@ -8,11 +8,23 @@
             <br>
             <div class="blog-blocks">
                 {% for i in BlogsData %}
-                <a href = "/blogsview/{{i.news_slug}}" class = "blog-link">
-                <div class="blog">
-                    <h3>{{ i.news_title }}</h3>
-                    <p>{{ i.news_description|safe }}</p>
-                </div>
+                    {% if i.news_slug %}
+                        <a href="/blogsview/{{ i.news_slug }}" class="blog-link">
+                    {% endif %}
+                        <div class="blog">
+                            <h3>{{ i.news_title }}</h3>
+                            {% comment %} <br>
+                            {% if i.news_image %}
+                            <div class="image-container">
+                                <img src="/media/{{ i.news_image }}" alt="{{ i.news_title }}" class="image-icon">
+                            </div>
+                            {% endif %} {% endcomment %}
+                            <br>
+                            <p>{{ i.news_description|safe }}</p>
+                        </div>
+                    {% if i.news_slug %}
+                        </a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

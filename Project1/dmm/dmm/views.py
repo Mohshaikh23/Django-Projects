@@ -6,19 +6,21 @@ import math
 from service.models import Service
 from news.models import News
 from django.core.paginator import Paginator
+from contactenquiry.models import enquiry
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 
 def homepage(request):
-    # data={
-    #     'title':"Home Page",
-    #     'bdata': "Hello Everyone I hope you are good",
-    #     'clist':['PHP', 'Java','Python'],
-    #     'numbers': [10,20,30,40,50],
-    #     'student_data': [
-    #         {'name': 'Mohsin', 'phone': 8999255183},
-    #         {'name': 'Harry', 'phone': 9899585252}
-    #     ]
-    # }
+    # subject = "Testing Mail",
+    # message = "Here is the message.",
+    # email_from = "mohsin.shaikh324@gmail.com",
+    # recipient_list = ["mohsin.shaikh23951@gmail.com"],
+    # fail_silently=False
+    
+    # send_mail(subject, message, email_from, recipient_list)
+
     return render(request, "index2.html")
 
 
@@ -28,18 +30,13 @@ def about(request):
 
 def services(request):
     servicesData = Service.objects.all()
-    paginator = Paginator(servicesData, 2)
-    page_num = request.GET.get('page')
-    serviceDatafinal = paginator.get_page(page_num)
-
-
+    
     if request.method == "GET":
         st = request.GET.get('service_name')
         if st!= None:
             servicesData = Service.objects.filter(service_title__icontains=st)
     data = {
-        'servicesData':servicesData,
-        'serviceDatafinal': serviceDatafinal
+        'servicesData':servicesData
     }
     return render(request, "services.html", data)
 
@@ -51,6 +48,18 @@ def blogs(request):
     return render(request, "blogs.html", blog_data)
 
 def contact(request):
+    return render(request, "contact.html")
+
+def submit_enquiry(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        data = enquiry(e_name=name, 
+                       e_email = email,
+                       e_message=message)
+        data.save()
     return render(request, "contact.html")
 
 

@@ -410,7 +410,9 @@ button:hover {
 
 /* Define styles for the blogs section */
 .blogs {
-    padding: 20px; /* Add padding around the section */
+    padding: 20px;
+    height: 30px;
+    width: 30px;
   }
   
 /* Define styles for the container */
@@ -422,23 +424,46 @@ margin: 0 auto; /* Center the container horizontally */
 /* Define styles for the blog blocks */
 .blog-blocks {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with minimum item width of 300px */
-    gap: 20px; /* Gap between blog blocks */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    height: 30px;
+    width: 30px;
 }
 
 /* Define styles for each blog block */
 .blog {
-background-color: #f0f0f0; /* Background color for blog blocks */
-padding: 20px; /* Add padding inside the blog block */
+    text-decoration: none;
+    background-color: #f0f0f0; 
+    padding: 20px;
+
 }
 
 /* Define styles for blog titles */
 .blog h3 {
-margin-top: 0; /* Remove margin from the top of the title */
+    text-decoration: none;
+    margin-top: 0; 
 }
 
 /* Define styles for blog descriptions */
-.blog p {
-margin-bottom: 0; /* Remove margin from the bottom of the description */
-}
+.blog-blocks .blog p {
+    color: #333; 
+    text-decoration: none;
+  }
+  
+  /* CSS for blog content links */
+.blog-blocks .blog p a {
+    color: #007bff; 
+    text-decoration: none;
+  }
+  
+  /* CSS for blog content links on hover */
+.blog-blocks .blog p a:hover {
+    text-decoration: underline;
+  }
 
+.image-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; 
+    border-radius: 50%;
+}

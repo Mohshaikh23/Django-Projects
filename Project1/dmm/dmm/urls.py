@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from dmm import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.homepage, name="home"),
@@ -33,4 +35,8 @@ urlpatterns = [
     path('courses/', views.course),
     path('courses/<courseid>', views.coursedetails),
     path('blogsview/<slug>', views.blogview, name = "blogview"),
+    path('submit_enquiry/', views.submit_enquiry, name="submit_enquiry"),
 ]
+
+if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL,document_root =settings.MEDIA_ROOT)

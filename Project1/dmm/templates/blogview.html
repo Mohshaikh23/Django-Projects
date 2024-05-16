@@ -6,6 +6,11 @@
     <section>
         <div class="container">
             <h3>{{ blog.news_title }}</h3>
+            <br>
+            {% if blog.news_image != NULL %}
+            <img src="/media/{{ blog.news_image }}" alt="{{ blog.news_title }}">
+            <br>
+            {% endif %}
             <p>{{ blog.news_description |safe }}</p>
         </div>        
     </section>
