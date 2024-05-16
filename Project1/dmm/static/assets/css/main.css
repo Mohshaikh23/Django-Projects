@@ -375,14 +375,14 @@ button:hover {
 
 /* CSS for tools section */
 .tools_sec {
-    margin-top: 300px; 
+    margin-top: 300px;
 }
   
 /* CSS for tools container */
 .tools {
-     
-    padding: 20px; 
-    background-color: #f9f9f9; 
+    margin-top: 10px;
+    margin-bottom: -20px;
+    background-color: #f9f9f9;
 }
 .tools h2 {
     margin-top: 0; 

@@ -26,7 +26,12 @@ def about(request):
 
 
 def services(request):
-    servicesData = Service.objects.all().order_by('id')
+    servicesData = Service.objects.all()
+
+    if request.method == "GET":
+        st = request.GET.get('service_name')
+        if st!= None:
+            servicesData = Service.objects.filter(service_title=st)
     data = {
         'servicesData':servicesData
     }
