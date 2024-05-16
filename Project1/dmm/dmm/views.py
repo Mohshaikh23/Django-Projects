@@ -143,3 +143,10 @@ def marksheet(request):
                 'division':d}
         return render(request, "marksheet.html", data)
     return render(request, "marksheet.html")
+
+def blogview(request, slug):
+    blog = News.objects.get(news_slug = slug)
+    blog_data = {
+        'blog': blog
+    }
+    return render(request, "blogview.html", blog_data)
